@@ -1,0 +1,16 @@
+[
+  {
+    "id": "co-001",
+    "title": "Conflitto in Ucraina",
+    "description": "Aggiornamenti e analisi sul conflitto in corso tra Russia e Ucraina.",
+    "content": "Testo completo dell'articolo sul conflitto in Ucraina.",
+    "tags": ["ucraina", "russia", "conflitti"]
+  },
+  {
+    "id": "co-002",
+    "title": "Crisi in Medio Oriente",
+    "description": "Le tensioni tra Israele, Palestina e gli attori regionali.",
+    "content": "Testo completo dell'articolo sulla crisi in Medio Oriente.",
+    "tags": ["medio oriente", "israele", "palestina", "conflitti"]
+  }
+]

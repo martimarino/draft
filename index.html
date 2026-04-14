@@ -3,21 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>DIPLOMACY.GEO</title>
+  <link rel="icon" type="image/png" href="assets/images/imresizer-favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <div class="overlay">
-    <h1>DIPLOMACY.GEO</h1>
-    <p>Analisi geopolitica globale</p>
+<div class="overlay">
 
-    <nav>
-    <a href="europa.html">Europa</a>
-    <a href="asia.html">Asia</a>
-    <a href="usa.html">USA</a>
-    <a href="conflitti.html">Conflitti</a>
-    </nav>
+  <h1>DIPLOMACY.GEO</h1>
+  <p>Analisi geopolitica globale</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="categoria.html?cat=europa">Europa</a>
+    <a href="categoria.html?cat=asia">Asia</a>
+    <a href="categoria.html?cat=usa">USA</a>
+  </nav>
+
+  <div class="content">
+    <h2>Breaking News Geopolitiche</h2>
+    <div id="breaking"></div>
   </div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Cerca articoli geopolitici...">
+    <select id="filtro">
+      <option value="">Tutte le aree</option>
+      <option value="europa">Europa</option>
+      <option value="asia">Asia</option>
+      <option value="usa">USA</option>
+      <option value="conflitti">Conflitti</option>
+    </select>
+    <button id="search-btn">Cerca</button>
+  </div>
+  <div id="status"></div>
+  <div id="articles"></div>
+
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/search.js"></script>
 
 </body>
 </html>

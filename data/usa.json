@@ -1,0 +1,16 @@
+[
+  {
+    "id": "us-001",
+    "title": "Elezioni presidenziali USA",
+    "description": "Implicazioni globali delle elezioni americane e il loro impatto sulle relazioni internazionali.",
+    "content": "Testo completo dell'articolo sulle elezioni presidenziali USA.",
+    "tags": ["usa", "elezioni", "politica"]
+  },
+  {
+    "id": "us-002",
+    "title": "Politica estera USA",
+    "description": "Le strategie di Washington tra NATO, Asia e Medio Oriente.",
+    "content": "Testo completo dell'articolo sulla politica estera degli USA.",
+    "tags": ["usa", "nato", "medio oriente"]
+  }
+]

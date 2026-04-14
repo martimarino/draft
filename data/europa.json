@@ -1,0 +1,25 @@
+[
+  {
+    "id": "eu-001",
+    "title": "Tensioni nell'Europa dell'Est",
+    "description": "Analisi delle dinamiche NATO-Russia...",
+    "content": [
+      { "type": "text", "value": "La situazione in Europa orientale è in evoluzione..." },
+      { "type": "image", "value": "assets/images/ucraina.jpg" },
+      { "type": "text", "value": "Le tensioni si concentrano sui confini strategici..." },
+      { "type": "map", "value": "https://www.google.com/maps/embed?pb=..." }
+    ],
+    "tags": ["nato", "russia", "europa"]
+  },
+  {
+    "id": "eu-002",
+    "title": "Politiche energetiche UE",
+    "description": "Transizione energetica e nuove strategie europee...",
+    "content": [
+      { "type": "text", "value": "L'Unione Europea sta accelerando la transizione energetica riducendo la dipendenza dal gas russo." },
+      { "type": "image", "value": "assets/images/energia.jpg" },
+      { "type": "text", "value": "Investimenti in rinnovabili e nucleare di nuova generazione sono al centro delle strategie UE." }
+    ],
+    "tags": ["europa", "energia", "ue"]
+  }
+]
