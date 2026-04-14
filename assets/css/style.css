@@ -1,9 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #0a0a0a; /* nero elegante */
-  color: #e0e0e0; /* testo chiaro */
   font-family: Arial, sans-serif;
+  color: #e0e0e0;
+
+  background: url('../images/mappa.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 /* Titolo principale */
@@ -27,7 +29,7 @@ nav {
 }
 
 nav a {
-  color: #00d4ff;
+  color: #d7dddf;
   text-decoration: none;
   margin: 0 15px;
   font-size: 1.2em;
@@ -35,4 +37,34 @@ nav a {
 
 nav a:hover {
   color: #ffffff;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.65); /* scurisce il globe */
+  height: 100vh;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.content {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: left;
+}
+
+.article {
+  background-color: rgba(20, 20, 20, 0.8);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ffd700;
+  border-radius: 5px;
+}
+
+.article h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.article p {
+  color: #bbbbbb;
 }
