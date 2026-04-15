@@ -1,25 +1,18 @@
 [
   {
-    "id": "eu-001",
+    "id": 1,
     "title": "Tensioni nell'Europa dell'Est",
-    "description": "Analisi delle dinamiche NATO-Russia...",
-    "content": [
-      { "type": "text", "value": "La situazione in Europa orientale è in evoluzione..." },
-      { "type": "image", "value": "assets/images/ucraina.jpg" },
-      { "type": "text", "value": "Le tensioni si concentrano sui confini strategici..." },
-      { "type": "map", "value": "https://www.google.com/maps/embed?pb=..." }
-    ],
+    "description": "Analisi delle dinamiche NATO-Russia e le ripercussioni sulla sicurezza europea.",
+    "date": "2026-04-10",
+    "image": "assets/images/ucraina.jpg",
     "tags": ["nato", "russia", "europa"]
   },
   {
-    "id": "eu-002",
+    "id": 5,
     "title": "Politiche energetiche UE",
-    "description": "Transizione energetica e nuove strategie europee...",
-    "content": [
-      { "type": "text", "value": "L'Unione Europea sta accelerando la transizione energetica riducendo la dipendenza dal gas russo." },
-      { "type": "image", "value": "assets/images/energia.jpg" },
-      { "type": "text", "value": "Investimenti in rinnovabili e nucleare di nuova generazione sono al centro delle strategie UE." }
-    ],
+    "description": "Transizione energetica e nuove strategie europee per la sicurezza energetica.",
+    "date": "2026-01-30",
+    "image": "assets/images/energia.jpg",
     "tags": ["europa", "energia", "ue"]
   }
 ]

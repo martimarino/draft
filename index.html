@@ -53,11 +53,18 @@
         let html = '';
         articles.forEach(article => {
           html += `
-            <div class="article">
-              <h3>
-                <a href="article.html?id=${article.id}">${article.title}</a>
-              </h3>
-              <p>${article.description}</p>
+            <div class="article-horizontal">
+              <div class="article-img-wrap">
+                <img src="${article.image}" alt="${article.title}" class="article-img">
+              </div>
+              <div class="article-info">
+                <h3 class="article-title">
+                  <a href="article.html?id=${article.id}">${article.title}</a>
+                </h3>
+                <div class="article-date">${article.date ? article.date : ''}</div>
+                <p class="article-desc">${article.description}</p>
+                <a class="article-link" href="article.html?id=${article.id}">Leggi articolo &rarr;</a>
+              </div>
             </div>
           `;
         });

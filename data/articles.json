@@ -3,36 +3,48 @@
     "id": 1,
     "title": "Tensioni nell'Europa dell'Est",
     "description": "Analisi delle dinamiche NATO-Russia e le ripercussioni sulla sicurezza europea.",
-    "category": "europa"
+    "category": "europa",
+    "date": "2026-04-10",
+    "image": "assets/images/ucraina.jpg"
   },
   {
     "id": 2,
     "title": "Elezioni presidenziali USA",
     "description": "Implicazioni globali delle elezioni americane e il loro impatto sulle relazioni internazionali.",
-    "category": "usa"
+    "category": "usa",
+    "date": "2026-03-28",
+    "image": "assets/images/usa.jpg"
   },
   {
     "id": 3,
     "title": "Crisi nel Mar Cinese Meridionale",
     "description": "Le tensioni tra Cina e paesi limitrofi per il controllo delle rotte marittime e delle risorse naturali.",
-    "category": "asia"
+    "category": "asia",
+    "date": "2026-03-15",
+    "image": "assets/images/cina.jpg"
   },
   {
     "id": 4,
     "title": "Conflitto in Ucraina",
     "description": "Aggiornamenti e analisi sul conflitto in corso tra Russia e Ucraina.",
-    "category": "conflitti"
+    "category": "conflitti",
+    "date": "2026-02-20",
+    "image": "assets/images/conflitto.jpg"
   },
   {
     "id": 5,
     "title": "Politiche energetiche UE",
     "description": "Transizione energetica e nuove strategie europee per la sicurezza energetica.",
-    "category": "europa"
+    "category": "europa",
+    "date": "2026-01-30",
+    "image": "assets/images/energia.jpg"
   },
   {
     "id": 6,
     "title": "Crescita economica indiana",
     "description": "L'India come nuova potenza economica e le sue sfide geopolitiche nella regione asiatica.",
-    "category": "asia"
+    "category": "asia",
+    "date": "2026-01-10",
+    "image": "assets/images/india.jpg"
   }
 ]

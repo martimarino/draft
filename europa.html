@@ -1,31 +1,43 @@
-<div class="overlay">
-  <h1>Europa</h1>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="asia.html">Asia</a>
-    <a href="usa.html">USA</a>
-    <a href="conflitti.html">Conflitti</a>
-  </nav>
-
-  <div class="content" id="articles"></div>
-</div>
-
-<script>
-fetch("data/europa.json")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("articles");
-
-    data.forEach(article => {
-      container.innerHTML += `
-        <div class="article">
-          <h3>
-            <a href="article.html?cat=europa&id=${article.id}">${article.title}</a>
-          </h3>
-          <p>${article.description}</p>
-        </div>
-      `;
-    });
-  });
-</script>
+  <header>
+    <a class="header-title" href="index.html">DIPLOMACY.GEO</a>
+    <nav class="header-nav">
+      <a href="categoria.html?cat=europa">Europa</a>
+      <a href="categoria.html?cat=asia">Asia</a>
+      <a href="categoria.html?cat=usa">USA</a>
+      <a href="categoria.html?cat=conflitti">Conflitti</a>
+    </nav>
+  </header>
+  <div class="content">
+    <h1>Europa</h1>
+    <div id="articles"></div>
+  </div>
+  <script>
+    fetch("data/europa.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("articles");
+        let html = '';
+        data.forEach(article => {
+          let imgPath = article.image || 'assets/images/placeholder.jpg';
+          if (imgPath && !imgPath.startsWith('assets/')) {
+            imgPath = 'assets/images/' + imgPath;
+          }
+          html += `
+            <div class=\"article-horizontal\">\n\
+              <div class=\"article-img-wrap\">\n\
+                <img src=\"${imgPath}\" alt=\"${article.title}\" class=\"article-img\">\n\
+              </div>\n\
+              <div class=\"article-info\">\n\
+                <h3 class=\"article-title\">\n\
+                  <a href=\"article.html?cat=europa&id=${article.id}\">${article.title}</a>\n\
+                </h3>\n\
+                <div class=\"article-date\">${article.date ? article.date : ''}</div>\n\
+                <p class=\"article-desc\">${article.description}</p>\n\
+                <a class=\"article-link\" href=\"article.html?cat=europa&id=${article.id}\">Leggi articolo &rarr;</a>\n\
+              </div>\n\
+            </div>\n\
+          `;
+        });
+        container.innerHTML = html;
+      });
+  </script>

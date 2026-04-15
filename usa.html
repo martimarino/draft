@@ -16,25 +16,39 @@
       <a href="categoria.html?cat=conflitti">Conflitti</a>
     </nav>
   </header>
-  <div class="content" id="articles">
+  <div class="content">
     <h1>USA</h1>
+    <div id="articles"></div>
   </div>
-<script>
-fetch("data/usa.json")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("articles");
-    data.forEach(article => {
-      container.innerHTML += `
-        <div class="article">
-          <h3>
-            <a href="article.html?cat=usa&id=${article.id}">${article.title}</a>
-          </h3>
-          <p>${article.description}</p>
-        </div>
-      `;
-    });
-  });
-</script>
+  <script>
+    fetch("data/usa.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("articles");
+        let html = '';
+        data.forEach(article => {
+          let imgPath = article.image || 'assets/images/placeholder.jpg';
+          if (imgPath && !imgPath.startsWith('assets/')) {
+            imgPath = 'assets/images/' + imgPath;
+          }
+          html += `
+            <div class=\"article-horizontal\">\n\
+              <div class=\"article-img-wrap\">\n\
+                <img src=\"${imgPath}\" alt=\"${article.title}\" class=\"article-img\">\n\
+              </div>\n\
+              <div class=\"article-info\">\n\
+                <h3 class=\"article-title\">\n\
+                  <a href=\"article.html?cat=usa&id=${article.id}\">${article.title}</a>\n\
+                </h3>\n\
+                <div class=\"article-date\">${article.date ? article.date : ''}</div>\n\
+                <p class=\"article-desc\">${article.description}</p>\n\
+                <a class=\"article-link\" href=\"article.html?cat=usa&id=${article.id}\">Leggi articolo &rarr;</a>\n\
+              </div>\n\
+            </div>\n\
+          `;
+        });
+        container.innerHTML = html;
+      });
+  </script>
 </body>
 </html>

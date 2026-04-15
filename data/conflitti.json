@@ -1,16 +1,18 @@
 [
   {
-    "id": "co-001",
+    "id": 4,
     "title": "Conflitto in Ucraina",
     "description": "Aggiornamenti e analisi sul conflitto in corso tra Russia e Ucraina.",
-    "content": "Testo completo dell'articolo sul conflitto in Ucraina.",
+    "date": "2026-02-20",
+    "image": "assets/images/conflitto.jpg",
     "tags": ["ucraina", "russia", "conflitti"]
   },
   {
-    "id": "co-002",
+    "id": 7,
     "title": "Crisi in Medio Oriente",
     "description": "Le tensioni tra Israele, Palestina e gli attori regionali.",
-    "content": "Testo completo dell'articolo sulla crisi in Medio Oriente.",
+    "date": "2026-01-15",
+    "image": "assets/images/medio-oriente.jpg",
     "tags": ["medio oriente", "israele", "palestina", "conflitti"]
   }
 ]
