@@ -9,7 +9,7 @@ const categorie = ["europa", "asia", "usa", "conflitti"];
 
 Promise.all(
   categorie.map(cat =>
-    fetch(`../data/${cat}.json`).then(res => res.json())
+    fetch(`data/${cat}.json`).then(res => res.json())
   )
 ).then(results => {
   const allArticles = results.flat();
