@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Tensioni nell'Europa dell'Est",
+    "description": "Analisi delle dinamiche NATO-Russia e le ripercussioni sulla sicurezza europea.",
+    "category": "europa"
+  },
+  {
+    "id": 2,
+    "title": "Elezioni presidenziali USA",
+    "description": "Implicazioni globali delle elezioni americane e il loro impatto sulle relazioni internazionali.",
+    "category": "usa"
+  },
+  {
+    "id": 3,
+    "title": "Crisi nel Mar Cinese Meridionale",
+    "description": "Le tensioni tra Cina e paesi limitrofi per il controllo delle rotte marittime e delle risorse naturali.",
+    "category": "asia"
+  },
+  {
+    "id": 4,
+    "title": "Conflitto in Ucraina",
+    "description": "Aggiornamenti e analisi sul conflitto in corso tra Russia e Ucraina.",
+    "category": "conflitti"
+  },
+  {
+    "id": 5,
+    "title": "Politiche energetiche UE",
+    "description": "Transizione energetica e nuove strategie europee per la sicurezza energetica.",
+    "category": "europa"
+  },
+  {
+    "id": 6,
+    "title": "Crescita economica indiana",
+    "description": "L'India come nuova potenza economica e le sue sfide geopolitiche nella regione asiatica.",
+    "category": "asia"
+  }
+]

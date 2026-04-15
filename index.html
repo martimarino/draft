@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <!-- Stili spostati in style.css -->
+    <header>
+      <a class="header-title" href="index.html">DIPLOMACY.GEO</a>
+      <nav class="header-nav">
+        <a href="categoria.html?cat=europa">Europa</a>
+        <a href="categoria.html?cat=asia">Asia</a>
+        <a href="categoria.html?cat=usa">USA</a>
+        <a href="categoria.html?cat=conflitti">Conflitti</a>
+      </nav>
+    </header>
   <meta charset="UTF-8">
   <title>DIPLOMACY.GEO</title>
   <link rel="icon" type="image/png" href="assets/images/imresizer-favicon.png">
@@ -8,41 +18,28 @@
 </head>
 <body>
 
-<div class="overlay">
-
-  <h1>DIPLOMACY.GEO</h1>
-  <p>Analisi geopolitica globale</p>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="categoria.html?cat=europa">Europa</a>
-    <a href="categoria.html?cat=asia">Asia</a>
-    <a href="categoria.html?cat=usa">USA</a>
-  </nav>
-
-  <div class="content">
-    <h2>Breaking News Geopolitiche</h2>
-    <div id="breaking"></div>
+  <div class="content" id="news-grid">
+    <!-- Notizie caricate via JS -->
   </div>
-
-  <div class="search-box">
-    <input type="text" id="search" placeholder="Cerca articoli geopolitici...">
-    <select id="filtro">
-      <option value="">Tutte le aree</option>
-      <option value="europa">Europa</option>
-      <option value="asia">Asia</option>
-      <option value="usa">USA</option>
-      <option value="conflitti">Conflitti</option>
-    </select>
-    <button id="search-btn">Cerca</button>
-  </div>
-  <div id="status"></div>
-  <div id="articles"></div>
-
-</div>
-
-<script src="assets/js/main.js"></script>
-<script src="assets/js/search.js"></script>
-
+  <script>
+    fetch('data/articles.json')
+      .then(res => res.json())
+      .then(articles => {
+        if (!Array.isArray(articles) || articles.length === 0) return;
+        const grid = document.getElementById('news-grid');
+        let html = '';
+        articles.forEach(article => {
+          html += `
+            <div class="article">
+              <h3>
+                <a href="article.html?id=${article.id}">${article.title}</a>
+              </h3>
+              <p>${article.description}</p>
+            </div>
+          `;
+        });
+        grid.innerHTML = html;
+      });
+  </script>
 </body>
 </html>

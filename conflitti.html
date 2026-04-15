@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Conflitti - DIPLOMACY.GEO</title>
+  <link rel="icon" type="image/png" href="assets/images/imresizer-favicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <a class="header-title" href="index.html">DIPLOMACY.GEO</a>
+    <nav class="header-nav">
+      <a href="categoria.html?cat=europa">Europa</a>
+      <a href="categoria.html?cat=asia">Asia</a>
+      <a href="categoria.html?cat=usa">USA</a>
+      <a href="categoria.html?cat=conflitti">Conflitti</a>
+    </nav>
+  </header>
+  <div class="content" id="articles">
+    <h1>Conflitti</h1>
+  </div>
+<script>
+fetch("data/conflitti.json")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("articles");
+    data.forEach(article => {
+      container.innerHTML += `
+        <div class="article">
+          <h3>
+            <a href="article.html?cat=conflitti&id=${article.id}">${article.title}</a>
+          </h3>
+          <p>${article.description}</p>
+        </div>
+      `;
+    });
+  });
+</script>
+</body>
+</html>
