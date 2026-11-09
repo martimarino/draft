@@ -258,6 +258,17 @@
   text-transform: capitalize;
 }
 
+.admin-quality-notes {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: #82521c;
+  font-size: .76rem;
+}
+
+.admin-quality-notes li + li {
+  margin-top: 3px;
+}
+
 .admin-item-actions {
   display: flex;
   flex-shrink: 0;

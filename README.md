@@ -18,10 +18,12 @@ Poi visita `http://localhost:8000`.
 ## Gestione degli articoli
 
 `data/articles.json` è la fonte unica per homepage, categorie, ricerca e pagine
-articolo. Ogni articolo contiene:
+articolo. La pagina `search.html` cerca in titoli, sommari, parole chiave e testo
+degli articoli e permette di filtrare per categoria. Ogni articolo contiene:
 
 - `id`: identificatore univoco usato negli URL;
-- `title`, `description`, `category` e `date`;
+- `title`, `description`, `category` e `date` (data dell'articolo, non
+  necessariamente la data del post Instagram);
 - `image`: percorso dell'immagine dalla root del sito;
 - `imageAlt`: descrizione accessibile della fotografia;
 - `imageCredit` e `imageCreditUrl` (facoltativi): attribuzione, licenza e pagina
@@ -49,3 +51,8 @@ non scrive sul repository né pubblica direttamente il sito. Le fonti si
 inseriscono una per riga come `Titolo | URL`; il link Instagram è facoltativo e
 deve puntare al post specifico, non soltanto al profilo. Per ogni nuova immagine
 compila anche descrizione accessibile, credito/licenza e pagina della fonte.
+
+Nel catalogo il pannello segnala, senza impedire salvataggio o esportazione,
+articoli sotto le 550 parole, meno di due fonti e metadati fotografici mancanti.
+Sono promemoria editoriali: verifica sempre l'attendibilità e la pertinenza delle
+fonti prima di pubblicare.

@@ -121,8 +121,20 @@ function renderArticles() {
     const heading = document.createElement("h3");
     heading.textContent = article.title;
     const meta = document.createElement("p");
-    meta.textContent = `${article.category} · ${article.date || "Data non impostata"}`;
+    meta.textContent = `${article.category} · ${article.date ? formatArticleDate(article.date) : "Data non impostata"}`;
     details.append(heading, meta);
+
+    const warnings = getQualityWarnings(article);
+    if (warnings.length > 0) {
+      const warningList = document.createElement("ul");
+      warningList.className = "admin-quality-notes";
+      warnings.forEach(warning => {
+        const note = document.createElement("li");
+        note.textContent = warning;
+        warningList.append(note);
+      });
+      details.append(warningList);
+    }
 
     const actions = document.createElement("div");
     actions.className = "admin-item-actions";
@@ -143,6 +155,32 @@ function renderArticles() {
     item.append(details, actions);
     list.append(item);
   });
+}
+
+function formatArticleDate(value) {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return value || "";
+  const date = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== value) return value;
+  return date.toLocaleDateString("it-IT", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC"
+  });
+}
+
+function getQualityWarnings(article) {
+  const warnings = [];
+  const wordCount = bodyToText(article.content).trim().split(/\s+/).filter(Boolean).length;
+  if (wordCount < 550) warnings.push(`Testo breve: ${wordCount} parole (obiettivo: almeno 550).`);
+  if (!Array.isArray(article.sources) || article.sources.length < 2) {
+    warnings.push("Aggiungi almeno 2 fonti verificabili.");
+  }
+  if (article.image && !article.imageAlt?.trim()) warnings.push("Manca il testo alternativo dell'immagine.");
+  if (article.image && (!article.imageCredit?.trim() || !isHttpUrl(article.imageCreditUrl))) {
+    warnings.push("Completa credito, licenza e link alla fonte della foto.");
+  }
+  return warnings;
 }
 
 function slugify(value) {

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cerca - DIPLOMACY.GEO</title>
+  <link rel="icon" type="image/png" href="assets/images/imresizer-favicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <a class="header-title" href="index.html">DIPLOMACY.GEO</a>
+    <nav class="header-nav" aria-label="Navigazione principale">
+      <a href="categoria.html?cat=europa">Europa</a>
+      <a href="categoria.html?cat=asia">Asia</a>
+      <a href="categoria.html?cat=usa">USA</a>
+      <a href="categoria.html?cat=conflitti">Conflitti</a>
+      <a href="search.html" aria-current="page">Cerca</a>
+    </nav>
+  </header>
+
+  <main class="page-shell search-page">
+    <section class="page-intro">
+      <p class="eyebrow">Archivio</p>
+      <h1>Cerca <span>un tema.</span></h1>
+      <p>Esplora le analisi per parola chiave o categoria.</p>
+    </section>
+
+    <form id="search-form" class="search-controls" role="search">
+      <div>
+        <label for="search">Parola chiave</label>
+        <input id="search" name="q" type="search" placeholder="Es. NATO, Iran, Curili" autocomplete="off">
+      </div>
+      <div>
+        <label for="filtro">Categoria</label>
+        <select id="filtro" name="categoria">
+          <option value="">Tutte le categorie</option>
+          <option value="europa">Europa</option>
+          <option value="asia">Asia</option>
+          <option value="usa">USA</option>
+          <option value="conflitti">Conflitti</option>
+        </select>
+      </div>
+      <button id="search-btn" type="submit">Cerca</button>
+    </form>
+
+    <p id="status" class="search-status" role="status" aria-live="polite"></p>
+    <section id="articles" class="article-grid search-results" aria-label="Risultati della ricerca"></section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="https://www.instagram.com/diplomacy.geo/" target="_blank" rel="noopener noreferrer">Segui @diplomacy.geo su Instagram ↗</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Diplomacy.geo</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/search.js"></script>
+</body>
+</html>

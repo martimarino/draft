@@ -28,7 +28,10 @@ if (!id) {
 
       title.textContent = article.title;
       document.title = `${article.title} - DIPLOMACY.GEO`;
-      date.textContent = article.date || "";
+      if (article.date) {
+        date.dateTime = article.date;
+        date.textContent = `Data dell'articolo: ${formatArticleDate(article.date)}`;
+      }
       if (article.image) {
         image.src = article.image;
         image.alt = article.imageAlt || article.title;
@@ -67,6 +70,18 @@ if (!id) {
 function showError(message) {
   title.textContent = message;
   content.textContent = "";
+}
+
+function formatArticleDate(value) {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return value || "";
+  const parsed = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== value) return value;
+  return parsed.toLocaleDateString("it-IT", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC"
+  });
 }
 
 function renderBlock(block) {

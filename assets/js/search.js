@@ -1,137 +1,132 @@
-// Wrappa tutto in DOMContentLoaded per garantire che tutti gli elementi siano presenti
-(function() {
-  function ready(fn) {
-    if (document.readyState !== 'loading') {
-      fn();
-    } else {
-      document.addEventListener('DOMContentLoaded', fn);
-    }
+const searchForm = document.getElementById("search-form");
+const searchInput = document.getElementById("search");
+const categoryFilter = document.getElementById("filtro");
+const container = document.getElementById("articles");
+const status = document.getElementById("status");
+
+let allArticles = [];
+
+searchForm.addEventListener("submit", event => event.preventDefault());
+searchForm.addEventListener("input", renderResults);
+searchForm.addEventListener("change", renderResults);
+
+function formatArticleDate(value) {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return value || "";
+  const date = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== value) return value;
+  return date.toLocaleDateString("it-IT", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC"
+  });
+}
+
+function articleSearchText(article) {
+  const content = Array.isArray(article.content)
+    ? article.content.map(block => block?.value || "").join(" ")
+    : article.content || "";
+  return [
+    article.title,
+    article.description,
+    ...(Array.isArray(article.tags) ? article.tags : []),
+    content
+  ].join(" ").toLocaleLowerCase("it");
+}
+
+function createArticleCard(article) {
+  const card = document.createElement("article");
+  card.className = "article-card";
+
+  if (article.image) {
+    const imageLink = document.createElement("a");
+    imageLink.className = "article-card-image";
+    imageLink.href = `article.html?id=${encodeURIComponent(article.id)}`;
+    imageLink.tabIndex = -1;
+    imageLink.setAttribute("aria-hidden", "true");
+
+    const image = document.createElement("img");
+    image.className = "article-img";
+    image.src = article.image;
+    image.alt = "";
+    imageLink.append(image);
+    card.append(imageLink);
   }
 
-  ready(function() {
-    const searchInput = document.getElementById("search");
-    const filtro = document.getElementById("filtro");
-    const searchBtn = document.getElementById("search-btn");
-    const container = document.getElementById("articles");
-    const status = document.getElementById("status");
+  const info = document.createElement("div");
+  info.className = "article-info";
 
-    let allArticles = [];
-    let isLoaded = false;
+  const category = document.createElement("span");
+  category.className = "category-label";
+  category.textContent = article.category || "";
 
-    async function loadData() {
-      status.innerText = "Caricamento articoli...";
+  const date = document.createElement("time");
+  date.className = "article-date";
+  if (article.date) date.dateTime = article.date;
+  date.textContent = article.date ? `Data articolo: ${formatArticleDate(article.date)}` : "";
 
-      const response = await fetch("data/articles.json");
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const articles = await response.json();
-      if (!Array.isArray(articles)) throw new Error("Formato articoli non valido");
-      allArticles = articles;
-      isLoaded = true;
+  const heading = document.createElement("h2");
+  heading.className = "article-title";
+  const titleLink = document.createElement("a");
+  titleLink.href = `article.html?id=${encodeURIComponent(article.id)}`;
+  titleLink.textContent = article.title || "Articolo senza titolo";
+  heading.append(titleLink);
 
-      status.innerText = `Caricati ${allArticles.length} articoli`;
-    }
+  const description = document.createElement("p");
+  description.className = "article-desc";
+  description.textContent = article.description || "";
 
-    loadData().catch(error => {
-      status.innerText = "Errore nel caricamento degli articoli";
-      console.error("Errore caricamento articoli:", error);
-    });
+  const readLink = document.createElement("a");
+  readLink.className = "article-link";
+  readLink.href = `article.html?id=${encodeURIComponent(article.id)}`;
+  readLink.append(document.createTextNode("Leggi l'analisi "));
+  const arrow = document.createElement("span");
+  arrow.setAttribute("aria-hidden", "true");
+  arrow.textContent = "→";
+  readLink.append(arrow);
 
-    // 🔥 RENDER
+  info.append(category, date, heading, description, readLink);
+  card.append(info);
+  return card;
+}
 
-    function render(list) {
-      container.innerHTML = "";
-
-      // Mostra risultati solo se c'è testo nella ricerca
-      const value = searchInput.value.trim();
-      if (!value) {
-        status.innerText = "";
-        return;
-      }
-
-      status.innerText = `Trovati ${list.length} articoli`;
-
-      if (list.length === 0) {
-        container.innerHTML = "<p>Nessun articolo trovato</p>";
-        return;
-      }
-
-      list.forEach(article => {
-        container.innerHTML += `
-          <div class="article">
-            <h3>
-              <a href="article.html?id=${encodeURIComponent(article.id)}">
-                ${article.title}
-              </a>
-            </h3>
-            <p>${article.description}</p>
-          </div>
-        `;
-      });
-
-      // Scrolla la pagina in alto alla barra di ricerca se ci sono risultati
-      if (list.length > 0) {
-        const searchBox = document.querySelector('.search-box');
-        if (searchBox) {
-          searchBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    }
-
-    // 🔥 categoria robusta
-    function getCategory(article) {
-      if (article.category) return article.category;
-      if (!article.tags) return "conflitti";
-
-      if (article.tags.includes("europa")) return "europa";
-      if (article.tags.includes("asia")) return "asia";
-      if (article.tags.includes("usa")) return "usa";
-
-      return "conflitti";
-    }
-
-    // 🔥 SEARCH
-
-    function doSearch() {
-      if (!isLoaded) return;
-
-      const value = searchInput.value.toLowerCase().trim();
-      const cat = filtro.value;
-
-      // Se il campo ricerca è vuoto, non mostrare risultati
-      if (!value) {
-        container.innerHTML = "";
-        status.innerText = "";
-        return;
-      }
-
-      let filtered = allArticles;
-
-      // filtro testo
-      if (value) {
-        filtered = filtered.filter(a =>
-          a.title.toLowerCase().includes(value) ||
-          a.description.toLowerCase().includes(value) ||
-          (a.tags && a.tags.some(t => t.includes(value)))
-        );
-      }
-
-      // filtro categoria
-      if (cat) filtered = filtered.filter(article => getCategory(article) === cat);
-
-      render(filtered);
-    }
-
-
-    // 🔥 EVENTI (puliti)
-    searchInput.addEventListener("input", doSearch);
-    searchInput.addEventListener("keydown", e => {
-      if (e.key === "Enter") doSearch();
-    });
-    if (searchBtn) {
-      searchBtn.addEventListener("click", function () {
-        doSearch();
-      });
-    }
-    filtro.addEventListener("change", doSearch);
+function renderResults() {
+  const query = searchInput.value.trim().toLocaleLowerCase("it");
+  const category = categoryFilter.value;
+  const results = allArticles.filter(article => {
+    const matchesText = !query || articleSearchText(article).includes(query);
+    const matchesCategory = !category || article.category === category;
+    return matchesText && matchesCategory;
   });
-})();
+
+  container.replaceChildren(...results.map(createArticleCard));
+  status.textContent = `${results.length} ${results.length === 1 ? "articolo trovato" : "articoli trovati"}`;
+
+  if (results.length === 0) {
+    const empty = document.createElement("p");
+    empty.className = "search-empty";
+    empty.textContent = "Nessun articolo trovato. Prova un'altra parola chiave o categoria.";
+    container.append(empty);
+  }
+}
+
+async function loadArticles() {
+  status.textContent = "Caricamento articoli...";
+  try {
+    const response = await fetch("data/articles.json");
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const articles = await response.json();
+    if (!Array.isArray(articles)) throw new Error("Formato articoli non valido");
+    allArticles = articles;
+
+    const params = new URLSearchParams(window.location.search);
+    searchInput.value = params.get("q") || "";
+    categoryFilter.value = params.get("categoria") || "";
+    renderResults();
+  } catch (error) {
+    status.textContent = "Non è stato possibile caricare gli articoli.";
+    console.error("Errore caricamento articoli:", error);
+  }
+}
+
+loadArticles();
