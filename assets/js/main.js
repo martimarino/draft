@@ -14,7 +14,7 @@ fetch("data/articles.json")
         </a>
         <div class="article-info">
           <span class="category-label">${article.category}</span>
-          <time class="article-date" datetime="${article.date || ""}">${article.date ? `Data articolo: ${formatArticleDate(article.date)}` : ""}</time>
+          <time class="article-date" datetime="${article.date || ""}">${article.date ? `Pubblicato il ${formatArticleDate(article.date)}` : ""}</time>
           <h3 class="article-title">
             <a href="article.html?id=${encodeURIComponent(article.id)}">${article.title}</a>
           </h3>

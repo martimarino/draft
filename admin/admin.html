@@ -17,12 +17,19 @@
     <section class="admin-heading">
       <p class="eyebrow">Area redazione</p>
       <h1>Gestisci gli articoli</h1>
-      <p>Prepara il catalogo qui, poi esportalo per aggiornare il sito.</p>
+      <p>Prepara gli articoli qui e segui i passaggi per pubblicarli sul magazine.</p>
     </section>
 
     <aside class="admin-notice">
-      Questo pannello salva le bozze solo in questo browser. Per pubblicarle,
-      scarica il catalogo e sostituisci <code>data/articles.json</code> nel progetto.
+      <strong>Pubblicare un aggiornamento</strong>
+      <ol>
+        <li>Modifica o aggiungi gli articoli: le bozze restano in questo browser.</li>
+        <li>Seleziona <strong>Scarica articles.json</strong>.</li>
+        <li>Sostituisci <code>data/articles.json</code> nel progetto con il file scaricato; aggiungi anche le nuove immagini in <code>assets/images/</code>.</li>
+        <li>Controlla il sito in locale, poi salva e invia le modifiche al repository per pubblicarle su GitHub Pages.</li>
+      </ol>
+      Il pannello non modifica i file del progetto e non pubblica direttamente. Dopo la pubblicazione, conserva il JSON aggiornato come base per le prossime modifiche.
+      <p><a href="../metodo.html">Metodo editoriale e gestione delle fonti</a></p>
     </aside>
 
     <div id="status" class="admin-status" role="status" aria-live="polite"></div>
@@ -54,7 +61,7 @@
               </select>
             </div>
             <div>
-              <label for="date">Data dell'articolo</label>
+              <label for="date">Data di pubblicazione sul magazine</label>
               <input id="date" name="date" type="date" required>
             </div>
           </div>
@@ -83,7 +90,7 @@
 
           <label for="body">Testo dell’articolo</label>
           <textarea id="body" name="body" rows="9" placeholder="Scrivi o incolla il testo. Lascia una riga vuota tra i paragrafi."></textarea>
-          <p class="admin-help">Controlli non bloccanti: punta ad almeno 550 parole e 2 fonti; aggiungi testo alternativo e credito/licenza per ogni immagine.</p>
+          <p class="admin-help">La data del post Instagram non viene ricavata dal link. Le modifiche successive registrano automaticamente la data di aggiornamento. Controlli non bloccanti: punta ad almeno 550 parole e 2 fonti; aggiungi testo alternativo e credito/licenza per ogni immagine.</p>
 
           <div class="admin-form-actions">
             <button id="save-button" class="admin-button" type="submit">Aggiungi al catalogo</button>

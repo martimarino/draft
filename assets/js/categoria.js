@@ -30,7 +30,7 @@ if (!categorie.includes(cat)) {
           </a>
           <div class="article-info">
             <span class="category-label">${article.category}</span>
-            <time class="article-date" datetime="${article.date || ""}">${article.date ? `Data articolo: ${formatArticleDate(article.date)}` : ""}</time>
+            <time class="article-date" datetime="${article.date || ""}">${article.date ? `Pubblicato il ${formatArticleDate(article.date)}` : ""}</time>
             <h2 class="article-title">
               <a href="article.html?id=${encodeURIComponent(article.id)}">${article.title}</a>
             </h2>
@@ -47,13 +47,13 @@ if (!categorie.includes(cat)) {
 }
 
 function formatArticleDate(value) {
-    if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return value || "";
-    const date = new Date(`${value}T00:00:00Z`);
-    if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== value) return value;
-    return date.toLocaleDateString("it-IT", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      timeZone: "UTC"
-    });
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return value || "";
+  const date = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== value) return value;
+  return date.toLocaleDateString("it-IT", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC"
+  });
 }

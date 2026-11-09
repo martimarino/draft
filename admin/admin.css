@@ -47,6 +47,19 @@
   font-size: .9rem;
 }
 
+.admin-notice ol {
+  margin: 10px 0;
+  padding-left: 22px;
+}
+
+.admin-notice li + li {
+  margin-top: 5px;
+}
+
+.admin-notice p {
+  margin-bottom: 0;
+}
+
 .admin-notice code,
 .admin-help code {
   font-family: Consolas, monospace;

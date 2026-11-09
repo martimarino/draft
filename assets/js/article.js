@@ -4,6 +4,7 @@ const id = params.get("id");
 const title = document.getElementById("title");
 const content = document.getElementById("content");
 const date = document.getElementById("date");
+const updatedDate = document.getElementById("updated-date");
 const image = document.getElementById("image");
 const imageCredit = document.getElementById("image-credit");
 const instagramSource = document.getElementById("instagram-source");
@@ -30,7 +31,12 @@ if (!id) {
       document.title = `${article.title} - DIPLOMACY.GEO`;
       if (article.date) {
         date.dateTime = article.date;
-        date.textContent = `Data dell'articolo: ${formatArticleDate(article.date)}`;
+        date.textContent = `Pubblicato il ${formatArticleDate(article.date)}`;
+      }
+      if (article.updatedAt && article.updatedAt !== article.date) {
+        updatedDate.dateTime = article.updatedAt;
+        updatedDate.textContent = `Aggiornato il ${formatArticleDate(article.updatedAt)}`;
+        updatedDate.hidden = false;
       }
       if (article.image) {
         image.src = article.image;

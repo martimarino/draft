@@ -63,7 +63,7 @@ function createArticleCard(article) {
   const date = document.createElement("time");
   date.className = "article-date";
   if (article.date) date.dateTime = article.date;
-  date.textContent = article.date ? `Data articolo: ${formatArticleDate(article.date)}` : "";
+  date.textContent = article.date ? `Pubblicato il ${formatArticleDate(article.date)}` : "";
 
   const heading = document.createElement("h2");
   heading.className = "article-title";

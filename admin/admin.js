@@ -48,6 +48,9 @@ function validateCatalog(value) {
     if (article.date !== undefined && typeof article.date !== "string") {
       throw new Error(`La data dell’articolo ${row} non è valida.`);
     }
+    if (article.updatedAt !== undefined && typeof article.updatedAt !== "string") {
+      throw new Error(`La data di aggiornamento dell’articolo ${row} non è valida.`);
+    }
     if (article.image !== undefined && typeof article.image !== "string") {
       throw new Error(`Il percorso immagine dell’articolo ${row} non è valido.`);
     }
@@ -121,7 +124,7 @@ function renderArticles() {
     const heading = document.createElement("h3");
     heading.textContent = article.title;
     const meta = document.createElement("p");
-    meta.textContent = `${article.category} · ${article.date ? formatArticleDate(article.date) : "Data non impostata"}`;
+    meta.textContent = `${article.category} · ${article.date ? `Pubblicato il ${formatArticleDate(article.date)}` : "Data di pubblicazione non impostata"}${article.updatedAt && article.updatedAt !== article.date ? ` · Aggiornato il ${formatArticleDate(article.updatedAt)}` : ""}`;
     details.append(heading, meta);
 
     const warnings = getQualityWarnings(article);
@@ -175,6 +178,11 @@ function getQualityWarnings(article) {
   if (wordCount < 550) warnings.push(`Testo breve: ${wordCount} parole (obiettivo: almeno 550).`);
   if (!Array.isArray(article.sources) || article.sources.length < 2) {
     warnings.push("Aggiungi almeno 2 fonti verificabili.");
+  }
+  if (Array.isArray(article.sources) && article.sources.some(source =>
+      typeof source?.url === "string" && new URL(source.url).hostname === "news.google.com"
+  )) {
+    warnings.push("La fonte passa da Google News: cerca e verifica il permalink dell'editore.");
   }
   if (article.image && !article.imageAlt?.trim()) warnings.push("Manca il testo alternativo dell'immagine.");
   if (article.image && (!article.imageCredit?.trim() || !isHttpUrl(article.imageCreditUrl))) {
@@ -312,6 +320,9 @@ form.addEventListener("submit", event => {
     tags,
     sources
   };
+  if (previous) {
+    article.updatedAt = getLocalDate();
+  }
   const instagramUrl = form.elements.instagramUrl.value.trim();
   if (instagramUrl) {
     if (!isHttpUrl(instagramUrl)) {
