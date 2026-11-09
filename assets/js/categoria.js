@@ -1,40 +1,47 @@
 const params = new URLSearchParams(window.location.search);
-const cat = params.get("cat");
-
 const title = document.getElementById("title");
 const container = document.getElementById("articles");
+const cat = params.get("cat") || container.dataset.category;
+const categorie = ["europa", "asia", "usa", "conflitti"];
 
-title.innerText = cat ? cat.toUpperCase() : "Categoria";
+if (!categorie.includes(cat)) {
+  title.textContent = "Categoria non trovata";
+  container.textContent = "La categoria richiesta non esiste.";
+} else {
+  title.textContent = cat.toUpperCase();
 
-fetch(`data/${cat}.json`)
-  .then(res => res.json())
-  .then(data => {
-    let html = '';
-    data.forEach(article => {
-      // Correggi path immagini: se non inizia per 'assets/', aggiungi 'assets/images/'
-      let imgPath = article.image || 'assets/images/placeholder.jpg';
-      if (imgPath && !imgPath.startsWith('assets/')) {
-        imgPath = 'assets/images/' + imgPath;
+  fetch("data/articles.json")
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then(articles => {
+      if (!Array.isArray(articles)) throw new Error("Formato articoli non valido");
+      const filtered = articles.filter(article => article.category === cat);
+      if (filtered.length === 0) {
+        container.textContent = "Nessun articolo in questa categoria.";
+        return;
       }
-      html += `
-        <div class=\"article-horizontal\">\n\
-          <div class=\"article-img-wrap\">\n\
-            <img src=\"../${imgPath}\" alt=\"${article.title}\" class=\"article-img\">\n\
-          </div>\n\
-          <div class=\"article-info\">\n\
-            <h3 class=\"article-title\">\n\
-              <a href=\"article.html?cat=${cat}&id=${article.id}\">${article.title}</a>\n\
-            </h3>\n\
-            <div class=\"article-date\">${article.date ? article.date : ''}</div>\n\
-            <p class=\"article-desc\">${article.description}</p>\n\
-            <a class=\"article-link\" href=\"article.html?cat=${cat}&id=${article.id}\">Leggi articolo &rarr;</a>\n\
-          </div>\n\
-        </div>\n\
-      `;
+
+      container.innerHTML = filtered.map(article => `
+        <article class="article-card">
+          <a class="article-card-image" href="article.html?id=${encodeURIComponent(article.id)}" tabindex="-1" aria-hidden="true">
+            <img src="${article.image}" alt="" class="article-img">
+          </a>
+          <div class="article-info">
+            <span class="category-label">${article.category}</span>
+            <div class="article-date">${article.date || ""}</div>
+            <h2 class="article-title">
+              <a href="article.html?id=${encodeURIComponent(article.id)}">${article.title}</a>
+            </h2>
+            <p class="article-desc">${article.description}</p>
+            <a class="article-link" href="article.html?id=${encodeURIComponent(article.id)}">Leggi l'analisi <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      `).join("");
+    })
+    .catch(error => {
+      container.textContent = "Errore nel caricamento degli articoli.";
+      console.error("Errore caricamento articoli:", error);
     });
-    container.innerHTML = html;
-  })
-  .catch(err => {
-    container.innerHTML = "<p>Errore caricamento articoli</p>";
-    console.error(err);
-  });
+}

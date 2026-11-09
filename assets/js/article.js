@@ -1,47 +1,120 @@
 const params = new URLSearchParams(window.location.search);
-const cat = params.get("cat");
 const id = params.get("id");
 
 const title = document.getElementById("title");
 const content = document.getElementById("content");
+const date = document.getElementById("date");
+const image = document.getElementById("image");
+const imageCredit = document.getElementById("image-credit");
+const instagramSource = document.getElementById("instagram-source");
+const articleSources = document.getElementById("article-sources");
+const sourceList = document.getElementById("source-list");
 
-const categorie = ["europa", "asia", "usa", "conflitti"];
+if (!id) {
+  showError("Articolo non trovato");
+} else {
+  fetch("data/articles.json")
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then(articles => {
+      if (!Array.isArray(articles)) throw new Error("Formato articoli non valido");
+      const article = articles.find(item => item.id === id);
+      if (!article) {
+        showError("Articolo non trovato");
+        return;
+      }
 
-Promise.all(
-  categorie.map(cat =>
-    fetch(`data/${cat}.json`).then(res => res.json())
-  )
-).then(results => {
-  const allArticles = results.flat();
-  const article = allArticles.find(a => a.id === id);
-  if (!article) {
-    title.innerText = "Articolo non trovato";
-    content.innerText = "";
-    return;
-  }
-  title.innerText = article.title;
-  content.innerHTML = "";
-  if (Array.isArray(article.content)) {
-    article.content.forEach(block => {
-      if (block.type === "text") {
-        content.innerHTML += `<p>${block.value}</p>`;
+      title.textContent = article.title;
+      document.title = `${article.title} - DIPLOMACY.GEO`;
+      date.textContent = article.date || "";
+      if (article.image) {
+        image.src = article.image;
+        image.alt = article.imageAlt || article.title;
+        image.hidden = false;
+        if (article.imageCredit && isHttpUrl(article.imageCreditUrl)) {
+          const creditLink = document.createElement("a");
+          creditLink.href = article.imageCreditUrl;
+          creditLink.target = "_blank";
+          creditLink.rel = "noopener noreferrer";
+          creditLink.textContent = article.imageCredit;
+          imageCredit.append(creditLink);
+          imageCredit.hidden = false;
+        }
       }
-      if (block.type === "image") {
-        content.innerHTML += `<img src="${block.value}" style="width:100%; margin:20px 0;">`;
+      if (isHttpUrl(article.instagramUrl)) {
+        instagramSource.href = article.instagramUrl;
+        instagramSource.hidden = false;
       }
-      if (block.type === "map") {
-        content.innerHTML += `<iframe src="${block.value}" width="100%" height="300"></iframe>`;
+
+      if (Array.isArray(article.content)) {
+        article.content.forEach(block => renderBlock(block));
+      } else {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = article.content || article.description || "";
+        content.append(paragraph);
       }
+      renderSources(article.sources);
+      renderRelated(articles, article);
+    })
+    .catch(error => {
+      showError("Errore nel caricamento dell'articolo");
+      console.error("Errore caricamento articolo:", error);
     });
-  } else {
-    content.innerText = article.content;
+}
+
+function showError(message) {
+  title.textContent = message;
+  content.textContent = "";
+}
+
+function renderBlock(block) {
+  if (block.type === "text") {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = block.value;
+    content.append(paragraph);
+  } else if (block.type === "image") {
+    const image = document.createElement("img");
+    image.src = block.value;
+    image.alt = "";
+    content.append(image);
+  } else if (block.type === "map") {
+    const frame = document.createElement("iframe");
+    frame.src = block.value;
+    frame.title = "Mappa relativa all'articolo";
+    frame.loading = "lazy";
+    content.append(frame);
   }
-  renderRelated(allArticles, article);
-}).catch(err => {
-  title.innerText = "Errore caricamento";
-  content.innerText = "";
-  console.error(err);
-});
+}
+
+function isHttpUrl(value) {
+  try {
+    return ["http:", "https:"].includes(new URL(value).protocol);
+  } catch {
+    return false;
+  }
+}
+
+function renderSources(sources) {
+  if (!Array.isArray(sources)) return;
+  const validSources = sources.filter(source =>
+    source && typeof source.title === "string" && source.title.trim() && isHttpUrl(source.url)
+  );
+  if (validSources.length === 0) return;
+
+  validSources.forEach(source => {
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = source.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = source.title;
+    item.append(link);
+    sourceList.append(item);
+  });
+  articleSources.hidden = false;
+}
 
 function renderRelated(all, current) {
   const related = all.filter(a =>
@@ -52,22 +125,16 @@ function renderRelated(all, current) {
   if (related.length === 0) return;
 
   const box = document.getElementById("related-articles");
-  box.innerHTML = "<h3>Articoli correlati</h3>";
+  const heading = document.createElement("h2");
+  heading.textContent = "Articoli correlati";
+  box.append(heading);
 
   related.forEach(r => {
-    box.innerHTML += `
-      <p>
-        <a href="article.html?cat=${findCategory(r)}&id=${r.id}">
-          ${r.title}
-        </a>
-      </p>
-    `;
+    const paragraph = document.createElement("p");
+    const link = document.createElement("a");
+    link.href = `article.html?id=${encodeURIComponent(r.id)}`;
+    link.textContent = r.title;
+    paragraph.append(link);
+    box.append(paragraph);
   });
-}
-
-function findCategory(article) {
-  if (article.tags.includes("europa")) return "europa";
-  if (article.tags.includes("asia")) return "asia";
-  if (article.tags.includes("usa")) return "usa";
-  return "conflitti";
 }

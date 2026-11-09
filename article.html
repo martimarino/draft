@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Articolo - DIPLOMACY.GEO</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -10,7 +11,16 @@
 <div class="overlay">
   <h1 id="title"></h1>
   <div class="content article-page">
+    <a href="index.html" class="article-link">← Torna agli articoli</a>
+    <div id="date" class="article-date"></div>
+    <a id="instagram-source" class="instagram-source" hidden target="_blank" rel="noopener noreferrer">Dal post Instagram ↗</a>
+    <img id="image" class="article-hero" hidden>
+    <p id="image-credit" class="image-credit" hidden></p>
     <div id="content"></div>
+    <section id="article-sources" class="article-sources" hidden>
+      <h2>Fonti e approfondimenti</h2>
+      <ul id="source-list"></ul>
+    </section>
   </div>
 
   <footer>

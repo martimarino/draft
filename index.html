@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <!-- Stili spostati in style.css -->
-    <header>
-      <a class="header-title" href="index.html">DIPLOMACY.GEO</a>
-      <nav class="header-nav">
-        <a href="categoria.html?cat=europa">Europa</a>
-        <a href="categoria.html?cat=asia">Asia</a>
-        <a href="categoria.html?cat=usa">USA</a>
-        <a href="categoria.html?cat=conflitti">Conflitti</a>
-      </nav>
-    </header>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DIPLOMACY.GEO</title>
   <link rel="icon" type="image/png" href="assets/images/imresizer-favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <header>
+    <a class="header-title" href="index.html">DIPLOMACY.GEO</a>
+    <nav class="header-nav" aria-label="Categorie">
+      <a href="categoria.html?cat=europa">Europa</a>
+      <a href="categoria.html?cat=asia">Asia</a>
+      <a href="categoria.html?cat=usa">USA</a>
+      <a href="categoria.html?cat=conflitti">Conflitti</a>
+    </nav>
+  </header>
 
-  <div class="content" id="news-grid">
-    <!-- Notizie caricate via JS -->
-  </div>
+  <main class="page-shell">
+    <section class="page-intro">
+      <p class="eyebrow">Analisi • Geopolitica • Scenari globali</p>
+      <h1>Il mondo, <span>in prospettiva.</span></h1>
+      <p>Dal profilo Instagram al magazine: contesto, analisi e fonti per leggere la geopolitica.</p>
+    </section>
+    <section>
+      <div class="section-heading">
+        <h2>Ultime analisi</h2>
+        <span>Una lettura oltre i titoli</span>
+      </div>
+      <div class="content article-grid" id="news-grid">
+        <!-- Notizie caricate via JS -->
+      </div>
+    </section>
+  </main>
     <footer>
       <div class="footer-content">
         <div class="footer-links">
@@ -29,7 +42,7 @@
           <a href="#">Contatti</a>
         </div>
         <div class="footer-social">
-          <a href="#" title="Instagram" aria-label="Instagram" style="vertical-align:middle;">
+          <a href="https://www.instagram.com/diplomacy.geo/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram" style="vertical-align:middle;">
             <svg width="24" height="24" fill="#ffd700" viewBox="0 0 24 24" style="vertical-align:middle;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.425 3.678 1.406c-.981.981-1.275 2.093-1.334 3.374C2.013 8.332 2 8.741 2 12c0 3.259.013 3.668.072 4.948.059 1.281.353 2.393 1.334 3.374.981.981 2.093 1.275 3.374 1.334C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.281-.059 2.393-.353 3.374-1.334.981-.981 1.275-2.093 1.334-3.374.059-1.28.072-1.689.072-4.948 0-3.259-.013-3.668-.072-4.948-.059-1.281-.353-2.393-1.334-3.374-.981-.981-2.093-1.275-3.374-1.334C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
           </a>
           <a href="#" title="Twitter" aria-label="Twitter" style="vertical-align:middle;">
@@ -44,32 +57,6 @@
         </div>
       </div>
     </footer>
-  <script>
-    fetch('data/articles.json')
-      .then(res => res.json())
-      .then(articles => {
-        if (!Array.isArray(articles) || articles.length === 0) return;
-        const grid = document.getElementById('news-grid');
-        let html = '';
-        articles.forEach(article => {
-          html += `
-            <div class="article-horizontal">
-              <div class="article-img-wrap">
-                <img src="${article.image}" alt="${article.title}" class="article-img">
-              </div>
-              <div class="article-info">
-                <h3 class="article-title">
-                  <a href="article.html?id=${article.id}">${article.title}</a>
-                </h3>
-                <div class="article-date">${article.date ? article.date : ''}</div>
-                <p class="article-desc">${article.description}</p>
-                <a class="article-link" href="article.html?id=${article.id}">Leggi articolo &rarr;</a>
-              </div>
-            </div>
-          `;
-        });
-        grid.innerHTML = html;
-      });
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

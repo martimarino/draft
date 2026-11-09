@@ -18,26 +18,23 @@
     let allArticles = [];
     let isLoaded = false;
 
-    const categorie = ["europa", "asia", "usa", "conflitti"];
-
-    // 🔥 LOAD SICURO
     async function loadData() {
       status.innerText = "Caricamento articoli...";
 
-      const results = await Promise.all(
-        categorie.map(cat =>
-          fetch(`data/${cat}.json`).then(res => res.json())
-        )
-      );
-
-      allArticles = results.flat();
+      const response = await fetch("data/articles.json");
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const articles = await response.json();
+      if (!Array.isArray(articles)) throw new Error("Formato articoli non valido");
+      allArticles = articles;
       isLoaded = true;
 
       status.innerText = `Caricati ${allArticles.length} articoli`;
-      render(allArticles);
     }
 
-    loadData();
+    loadData().catch(error => {
+      status.innerText = "Errore nel caricamento degli articoli";
+      console.error("Errore caricamento articoli:", error);
+    });
 
     // 🔥 RENDER
 
@@ -62,7 +59,7 @@
         container.innerHTML += `
           <div class="article">
             <h3>
-              <a href="article.html?cat=${getCategory(article)}&id=${article.id}">
+              <a href="article.html?id=${encodeURIComponent(article.id)}">
                 ${article.title}
               </a>
             </h3>
@@ -82,6 +79,7 @@
 
     // 🔥 categoria robusta
     function getCategory(article) {
+      if (article.category) return article.category;
       if (!article.tags) return "conflitti";
 
       if (article.tags.includes("europa")) return "europa";
@@ -118,11 +116,7 @@
       }
 
       // filtro categoria
-      if (cat) {
-        filtered = filtered.filter(a =>
-          a.tags && a.tags.includes(cat)
-        );
-      }
+      if (cat) filtered = filtered.filter(article => getCategory(article) === cat);
 
       render(filtered);
     }

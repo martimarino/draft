@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Conflitti - DIPLOMACY.GEO</title>
   <link rel="icon" type="image/png" href="assets/images/imresizer-favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -9,46 +10,17 @@
 <body>
   <header>
     <a class="header-title" href="index.html">DIPLOMACY.GEO</a>
-    <nav class="header-nav">
+    <nav class="header-nav" aria-label="Categorie">
       <a href="categoria.html?cat=europa">Europa</a>
       <a href="categoria.html?cat=asia">Asia</a>
       <a href="categoria.html?cat=usa">USA</a>
       <a href="categoria.html?cat=conflitti">Conflitti</a>
     </nav>
   </header>
-  <div class="content">
-    <h1>Conflitti</h1>
-    <div id="articles"></div>
-  </div>
-  <script>
-    fetch("data/conflitti.json")
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById("articles");
-        let html = '';
-        data.forEach(article => {
-          let imgPath = article.image || 'assets/images/placeholder.jpg';
-          if (imgPath && !imgPath.startsWith('assets/')) {
-            imgPath = 'assets/images/' + imgPath;
-          }
-          html += `
-            <div class=\"article-horizontal\">\n\
-              <div class=\"article-img-wrap\">\n\
-                <img src=\"${imgPath}\" alt=\"${article.title}\" class=\"article-img\">\n\
-              </div>\n\
-              <div class=\"article-info\">\n\
-                <h3 class=\"article-title\">\n\
-                  <a href=\"article.html?cat=conflitti&id=${article.id}\">${article.title}</a>\n\
-                </h3>\n\
-                <div class=\"article-date\">${article.date ? article.date : ''}</div>\n\
-                <p class=\"article-desc\">${article.description}</p>\n\
-                <a class=\"article-link\" href=\"article.html?cat=conflitti&id=${article.id}\">Leggi articolo &rarr;</a>\n\
-              </div>\n\
-            </div>\n\
-          `;
-        });
-        container.innerHTML = html;
-      });
-  </script>
+  <main class="content">
+    <h1 id="title">Conflitti</h1>
+    <div id="articles" data-category="conflitti"></div>
+  </main>
+  <script src="assets/js/categoria.js"></script>
 </body>
 </html>

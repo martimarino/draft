@@ -1,50 +1,373 @@
 [
   {
-    "id": 1,
-    "title": "Tensioni nell'Europa dell'Est",
-    "description": "Analisi delle dinamiche NATO-Russia e le ripercussioni sulla sicurezza europea.",
-    "category": "europa",
-    "date": "2026-04-10",
-    "image": "assets/images/ucraina.jpg"
-  },
-  {
-    "id": 2,
-    "title": "Elezioni presidenziali USA",
-    "description": "Implicazioni globali delle elezioni americane e il loro impatto sulle relazioni internazionali.",
-    "category": "usa",
-    "date": "2026-03-28",
-    "image": "assets/images/usa.jpg"
-  },
-  {
-    "id": 3,
-    "title": "Crisi nel Mar Cinese Meridionale",
-    "description": "Le tensioni tra Cina e paesi limitrofi per il controllo delle rotte marittime e delle risorse naturali.",
-    "category": "asia",
-    "date": "2026-03-15",
-    "image": "assets/images/cina.jpg"
-  },
-  {
-    "id": 4,
-    "title": "Conflitto in Ucraina",
-    "description": "Aggiornamenti e analisi sul conflitto in corso tra Russia e Ucraina.",
+    "id": "opzione-sansone",
+    "title": "L'opzione Sansone: deterrenza, ambiguità e rischio nucleare",
+    "description": "Che cosa significa la cosiddetta opzione Sansone e perché l'ambiguità nucleare è parte del dibattito sulla deterrenza.",
     "category": "conflitti",
-    "date": "2026-02-20",
-    "image": "assets/images/conflitto.jpg"
+    "date": "2026-11-09",
+    "image": "assets/images/opzione-sansone.jpg",
+    "imageAlt": "Veduta aerea del cratere Ramon nel deserto del Negev, immagine di contesto",
+    "imageCredit": "Godot13 · CC BY-SA 4.0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Israel-2013-Aerial_00-Negev-Makhtesh_Ramon.jpg",
+    "instagramUrl": "https://www.instagram.com/diplomacy.geo/p/DWqS7mwCGRY/",
+    "tags": ["israele", "nucleare", "deterrenza", "medio oriente"],
+    "content": [
+      {
+        "type": "text",
+        "value": "Nel dibattito strategico, «opzione Sansone» è l'etichetta con cui si descrive, in modo ipotetico, una risposta nucleare estrema di Israele davanti a una minaccia esistenziale. Il nome richiama il racconto biblico di Sansone, ma non indica una dottrina ufficiale pubblicata né un piano operativo verificabile. È una formula giornalistica e analitica: va trattata come tale, non come una decisione accertata."
+      },
+      {
+        "type": "text",
+        "value": "Israele mantiene una politica di opacità: non conferma né smentisce il possesso di armi nucleari. Per questo le stime degli arsenali si basano su valutazioni indipendenti e restano incerte. SIPRI include Israele tra i nove Stati che si ritiene possiedano armi nucleari, ma sottolinea i limiti di trasparenza che rendono difficile stimare consistenza e stato operativo degli arsenali."
+      },
+      {
+        "type": "text",
+        "value": "La rilevanza della metafora sta quindi nella deterrenza, non nella previsione. L'ambiguità può aumentare l'incertezza di un avversario e contribuire alla dissuasione; allo stesso tempo, in una crisi, rende più difficile interpretare intenzioni e soglie di escalation. Una lettura responsabile distingue le stime verificabili dalle ipotesi e non presenta lo scenario estremo come inevitabile."
+      }
+    ],
+    "sources": [
+      {
+        "title": "SIPRI Yearbook 2025: Nuclear forces",
+        "url": "https://www.sipri.org/yearbook/2025/06"
+      }
+    ]
   },
   {
-    "id": 5,
-    "title": "Politiche energetiche UE",
-    "description": "Transizione energetica e nuove strategie europee per la sicurezza energetica.",
-    "category": "europa",
-    "date": "2026-01-30",
-    "image": "assets/images/energia.jpg"
-  },
-  {
-    "id": 6,
-    "title": "Crescita economica indiana",
-    "description": "L'India come nuova potenza economica e le sue sfide geopolitiche nella regione asiatica.",
+    "id": "isole-curili",
+    "title": "Isole Curili: una disputa che sopravvive alla guerra",
+    "description": "Le radici storiche della contesa tra Giappone e Russia e gli ostacoli a un trattato di pace definitivo.",
     "category": "asia",
-    "date": "2026-01-10",
-    "image": "assets/images/india.jpg"
+    "date": "2026-11-09",
+    "image": "assets/images/isole-curili.jpg",
+    "imageAlt": "Immagine satellitare delle isole Hokkaido e Kunashir",
+    "imageCredit": "Jeff Schmaltz / NASA GSFC · Public domain",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Islands_of_Hokkaido_and_Kunashir_(MODIS_2017-09-24).jpg",
+    "instagramUrl": "https://www.instagram.com/diplomacy.geo/p/DZ-LfaJCHe9/",
+    "tags": ["giappone", "russia", "curili", "territorio"],
+    "content": [
+      {
+        "type": "text",
+        "value": "La disputa riguarda quattro isole meridionali dell'arcipelago delle Curili, chiamate Territori del Nord dal Giappone e parte delle Curili meridionali dalla Russia. L'Unione Sovietica ne prese il controllo alla fine della Seconda guerra mondiale; Tokyo sostiene che le isole non rientrassero tra i territori che aveva rinunciato a rivendicare nel trattato di pace di San Francisco del 1951. Mosca considera invece la sovranità russa il risultato dell'assetto del dopoguerra."
+      },
+      {
+        "type": "text",
+        "value": "La questione ha impedito per decenni la firma di un trattato di pace formale tra i due Paesi. Nel 1956 una dichiarazione congiunta ristabilì le relazioni diplomatiche e prospettò la possibile consegna di due isole minori dopo la conclusione di un trattato, ma non risolse la controversia. Le diverse interpretazioni di quel testo continuano a pesare sui negoziati."
+      },
+      {
+        "type": "text",
+        "value": "La geografia aggiunge valore strategico: l'arcipelago si trova tra il Pacifico settentrionale e il Mare di Okhotsk, area importante per la postura navale russa. Per il Giappone, la questione è anche identitaria e giuridica; per Mosca, tocca sicurezza e controllo territoriale. In assenza di fiducia e di un compromesso politico, ogni crisi bilaterale può riattivare una disputa mai davvero archiviata."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Ministero degli Esteri del Giappone: Northern Territories Issue",
+        "url": "https://www.mofa.go.jp/region/europe/russia/territory/overview.html"
+      }
+    ]
+  },
+  {
+    "id": "dipendenza-geopolitica",
+    "title": "La «sindrome di Stoccolma geopolitica» esiste davvero?",
+    "description": "Una metafora efficace sui rapporti asimmetrici, ma non una categoria scientifica: come descrivere meglio la dipendenza tra Stati.",
+    "category": "europa",
+    "date": "2026-11-09",
+    "image": "assets/images/interdipendenza.jpg",
+    "imageAlt": "Navi portacontainer in un porto, immagine dei legami commerciali globali",
+    "imageCredit": "Isingo Raphael · CC BY-SA 4.0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:A_view_of_container_ships_at_coco_beach.jpg",
+    "instagramUrl": "https://www.instagram.com/diplomacy.geo/p/DZ5XteWiGSs/",
+    "tags": ["dipendenza", "interdipendenza", "alleanze", "geopolitica"],
+    "content": [
+      {
+        "type": "text",
+        "value": "«Sindrome di Stoccolma geopolitica» è una metafora, non una diagnosi riconosciuta nelle relazioni internazionali. Può rendere intuitiva la permanenza di un rapporto sbilanciato, ma rischia di psicologizzare le scelte di un governo e di descrivere come irrazionale ciò che può essere una decisione politica calcolata."
+      },
+      {
+        "type": "text",
+        "value": "Per analizzare un legame asimmetrico conviene chiedersi da quali risorse dipende ciascuna parte: energia, commercio, tecnologia, intelligence, sicurezza o accesso ai mercati. L'interdipendenza non è necessariamente paritaria. Un Paese può avere più alternative, sopportare meglio i costi della rottura o usare un collegamento economico come leva. Questa capacità di assorbire pressioni contribuisce al potere negoziale."
+      },
+      {
+        "type": "text",
+        "value": "La domanda utile non è quindi «perché un Paese resta legato al suo dominante?», ma quali costi, benefici e alternative percepiscono i decisori e quali gruppi interni influenzano la scelta. La metafora può aprire la conversazione; per concludere l'analisi servono dati sui flussi, sulle dipendenze e sulle opzioni disponibili, distinguendo l'interesse nazionale dalla retorica con cui viene presentato."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Carta delle Nazioni Unite: principi e relazioni tra Stati",
+        "url": "https://www.un.org/en/about-us/un-charter/full-text"
+      }
+    ]
+  },
+  {
+    "id": "russkiy-mir",
+    "title": "Russkiy Mir: identità culturale o strumento di politica estera?",
+    "description": "Come il concetto di «mondo russo» è entrato nel lessico ufficiale di Mosca e perché è rilevante per i Paesi vicini.",
+    "category": "europa",
+    "date": "2026-11-09",
+    "image": "assets/images/russkiy-mir.jpg",
+    "imageAlt": "Veduta del Cremlino sulla Piazza Rossa a Mosca",
+    "imageCredit": "Юрий Д.К. · CC BY 4.0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Moscow_Kremlin,_Red_Square.jpg",
+    "instagramUrl": "https://www.instagram.com/diplomacy.geo/p/DY0EihUEcnL/",
+    "tags": ["russia", "russkiy mir", "ucraina", "soft power"],
+    "content": [
+      {
+        "type": "text",
+        "value": "Russkiy Mir, letteralmente «mondo russo», è un concetto politico-culturale dai confini mobili. Può riferirsi alla lingua russa, a legami storici e a comunità russofone fuori dai confini della Federazione. Non è un'entità territoriale riconosciuta dal diritto internazionale: è una cornice narrativa che collega identità, memoria e appartenenza."
+      },
+      {
+        "type": "text",
+        "value": "Il concetto assume una dimensione di politica estera quando viene usato per giustificare iniziative rivolte alle comunità all'estero o per rivendicare un ruolo speciale di Mosca nello spazio post-sovietico. Nel 2022 il Cremlino ha adottato un documento sulla politica umanitaria russa all'estero che richiama esplicitamente la tutela e la promozione dei valori associati al Russkiy Mir. L'analisi del CSIS mette in relazione questa scelta con il contesto della guerra e con gli strumenti diplomatici russi."
+      },
+      {
+        "type": "text",
+        "value": "La distinzione essenziale è tra promozione culturale e pretesa di influenza politica. Parlare una lingua o condividere una memoria non equivale a sostenere un intervento esterno. Per valutare il concetto occorre osservare chi lo invoca, quali strumenti usa e quali conseguenze produce per la sovranità degli Stati e per le persone che dichiara di rappresentare."
+      }
+    ],
+    "sources": [
+      {
+        "title": "CSIS: Russia’s Adaptation Game — Deciphering the Kremlin’s “Humanitarian Policy”",
+        "url": "https://www.csis.org/analysis/russias-adaptation-game-deciphering-kremlins-humanitarian-policy"
+      }
+    ]
+  },
+  {
+    "id": "karbala-identita-iraniana",
+    "title": "Karbala e l'identità iraniana: memoria religiosa e politica",
+    "description": "Il significato della battaglia di Karbala nella tradizione sciita e i modi in cui la memoria viene interpretata in Iran.",
+    "category": "asia",
+    "date": "2026-11-09",
+    "image": "assets/images/karbala.jpg",
+    "imageAlt": "Il santuario dell'Imam Husayn a Karbala",
+    "imageCredit": "Lollitol · CC BY-SA 4.0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Imam_Husayn_Shrine.png",
+    "instagramUrl": "https://www.instagram.com/diplomacy.geo/p/DXJsxcOCC1g/",
+    "tags": ["iran", "karbala", "sciismo", "identità"],
+    "content": [
+      {
+        "type": "text",
+        "value": "La battaglia di Karbala, combattuta nel 680 nell'attuale Iraq, si concluse con la morte di Husayn ibn Ali e dei suoi compagni. Nella tradizione sciita, Husayn è una figura centrale e la sua uccisione è ricordata soprattutto durante l'Ashura. Il racconto ha assunto significati religiosi, etici e politici: martirio, ingiustizia, resistenza e fedeltà a una comunità."
+      },
+      {
+        "type": "text",
+        "value": "Per l'Iran, Paese a maggioranza sciita, Karbala è una componente importante della cultura pubblica, ma non spiega da sola l'identità nazionale né il comportamento dello Stato. La storia iraniana comprende tradizioni persiane anteriori all'Islam, esperienze dinastiche e rivoluzionarie, interessi economici e pluralità sociali. Ridurre la politica iraniana a una sola memoria religiosa porta a confondere una risorsa simbolica con una causa automatica."
+      },
+      {
+        "type": "text",
+        "value": "Le istituzioni possono richiamare Karbala per dare un significato morale a conflitti e sacrifici; i cittadini possono vivere la ricorrenza come devozione, appartenenza o pratica culturale. Questi usi non sono identici e possono anche essere contestati. La lente geopolitica più solida osserva come una memoria venga mobilitata in un preciso contesto, invece di trattarla come una chiave immutabile per leggere un intero Paese."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Encyclopaedia Iranica: Ḥosayn b. ʿAli, life and significance in Shiʿism",
+        "url": "https://www.iranicaonline.org/articles/hosayn-b-ali-i"
+      }
+    ]
+  },
+  {
+    "id": "difesa-a-mosaico-iran",
+    "title": "La difesa a mosaico iraniana: resilienza attraverso il decentramento",
+    "description": "Che cosa descrive la dottrina della difesa a mosaico e quali sono i limiti di un sistema progettato per resistere alla decapitazione.",
+    "category": "conflitti",
+    "date": "2026-11-09",
+    "image": "assets/images/difesa-mosaico.jpg",
+    "imageAlt": "Esercitazione militare dell'IRGC nella regione di Aras nel 2022",
+    "imageCredit": "Hossein Zohrevand · CC BY 4.0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:2022_IRGC_army_exercise_in_Aras_region_(17).jpg",
+    "instagramUrl": "https://www.instagram.com/diplomacy.geo/p/DXGttXGCIUA/",
+    "tags": ["iran", "difesa", "strategia", "medio oriente"],
+    "content": [
+      {
+        "type": "text",
+        "value": "«Difesa a mosaico» è il nome usato da analisti per descrivere l'organizzazione decentrata della difesa iraniana: responsabilità distribuite tra comandi regionali e unità, con l'obiettivo di mantenere una capacità di risposta anche se i vertici o le comunicazioni vengono colpiti. La metafora del mosaico suggerisce elementi distinti che possono continuare a operare senza dipendere da un unico centro."
+      },
+      {
+        "type": "text",
+        "value": "Il concetto si inserisce in una strategia più ampia di deterrenza e guerra asimmetrica. Una struttura distribuita può complicare i tentativi di paralizzare il sistema con un singolo attacco, ma non elimina i problemi di coordinamento, logistica, comunicazioni e controllo politico. La resilienza teorica non equivale automaticamente a efficacia sul campo: le capacità effettive e la catena di comando sono difficili da verificare dall'esterno."
+      },
+      {
+        "type": "text",
+        "value": "La formula è quindi utile per ragionare sui punti di forza e sulle vulnerabilità, non per prevedere una risposta certa. Anche una dottrina concepita per sopravvivere a una crisi può generare errori di calcolo se le parti interpretano male segnali o autorità locali. Il post di partenza va letto come introduzione a un dibattito strategico, non come prova che ogni componente del sistema funzionerà secondo i piani."
+      }
+    ],
+    "sources": [
+      {
+        "title": "The Soufan Center: Iran’s “Mosaic Defense” Strategy — Decentralization as Resilience Factor",
+        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5lMzFERU04dDktWXpSUi03N2RBbm1jeUlRalZ1YXRtaU1nNldSTWswX29fQUJadkxxZ25OZW1yY3dhWkpMMlBWa3VZWHU3WnZQanBpb0wyVXFKNkNQRlNESUlUMA?oc=5"
+      }
+    ]
+  },
+  {
+    "id": "nato-usa-europa",
+    "title": "NATO, Stati Uniti ed Europa: alleanza, dipendenze e margini di autonomia",
+    "description": "La relazione transatlantica non è solo una garanzia militare: è anche una questione di capacità, negoziato e autonomia strategica.",
+    "category": "europa",
+    "date": "2026-11-09",
+    "image": "assets/images/nato-bruxelles.jpg",
+    "imageAlt": "Bandiere dei Paesi NATO davanti alla sede dell'Alleanza a Bruxelles",
+    "imageCredit": "Senior Master Sgt. Adrian Cadiz / U.S. Air Force · Public domain",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:160211-D-DT527-007_NATO_country_flags_wave_at_the_entrance_of_NATO_headquarters_in_Brussels_2016.JPG",
+    "instagramUrl": "https://www.instagram.com/diplomacy.geo/p/DWmNw3XiFNT/",
+    "tags": ["nato", "usa", "europa", "sicurezza"],
+    "content": [
+      {
+        "type": "text",
+        "value": "L'alleanza transatlantica combina obblighi formali, consultazione politica e capacità militari molto diverse. L'articolo 5 del Trattato NATO stabilisce che un attacco armato contro un alleato sarà considerato un attacco contro tutti, ma lascia a ciascun Paese la scelta delle misure che ritiene necessarie, compreso l'uso della forza. La garanzia è collettiva; la sua attuazione richiede decisioni nazionali."
+      },
+      {
+        "type": "text",
+        "value": "Gli Stati Uniti restano un pilastro della deterrenza e delle capacità integrate dell'Alleanza. Molti governi europei, tuttavia, discutono come accrescere investimenti, produzione e prontezza militare. Il dibattito sull'autonomia europea non coincide necessariamente con l'uscita dalla NATO: riguarda anche la possibilità di agire con maggiori capacità quando interessi o priorità divergono."
+      },
+      {
+        "type": "text",
+        "value": "La dipendenza reciproca offre vantaggi ma crea anche leve negoziali. L'Europa beneficia della presenza e delle capacità statunitensi; Washington beneficia di alleati, basi, interoperabilità e influenza politica. Il punto non è decretare che l'alleanza sia «finita» o immutabile: è capire come cambiano gli impegni, quali risorse vengono messe a disposizione e quanto siano credibili le garanzie nei diversi scenari."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NATO: The North Atlantic Treaty",
+        "url": "https://www.nato.int/cps/en/natohq/official_texts_17120.htm"
+      },
+      {
+        "title": "Carta delle Nazioni Unite",
+        "url": "https://www.un.org/en/about-us/un-charter/full-text"
+      }
+    ]
+  },
+  {
+    "id": "fondi-ucraini-ungheria",
+    "title": "Oro, contanti e diplomazia: il caso dei valori ucraini fermati in Ungheria",
+    "description": "Il fermo di un trasferimento bancario ha inasprito le tensioni tra Budapest e Kyiv: cosa sappiamo e cosa resta da chiarire.",
+    "category": "europa",
+    "date": "2026-11-09",
+    "image": "assets/images/parlamento-ungheria.jpg",
+    "imageAlt": "Il Palazzo del Parlamento ungherese sulle rive del Danubio a Budapest",
+    "imageCredit": "Pierre Blaché · CC0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Hungarian_Parliament_Building_2023-9.jpg",
+    "tags": ["ucraina", "ungheria", "ue", "diplomazia"],
+    "content": [
+      {
+        "type": "text",
+        "value": "Nel marzo 2026 le autorità ungheresi fermarono un trasferimento di valori legato alla banca statale ucraina Oschadbank. Reuters riferì che il carico comprendeva contanti e oro per un valore dichiarato di circa 82 milioni di dollari e che alcuni dipendenti della banca erano stati trattenuti. Kyiv contestò il fermo e Budapest lo collegò a verifiche sulle attività finanziarie; le due versioni e il successivo iter giudiziario vanno riportati con attribuzione."
+      },
+      {
+        "type": "text",
+        "value": "Il caso è diventato rapidamente più di una controversia doganale. Le relazioni tra i due governi erano già segnate da divergenze sul sostegno europeo all'Ucraina e dalla posizione di Budapest sulle sanzioni e sui rapporti con Mosca. Un sequestro di contanti e metalli preziosi in transito solleva inoltre questioni pratiche: chi ne era proprietario, quale giurisdizione si applicava e quali garanzie avevano i lavoratori fermati."
+      },
+      {
+        "type": "text",
+        "value": "Per una ricostruzione rigorosa è essenziale separare i fatti confermati dalle accuse delle parti e seguire gli sviluppi legali successivi. La quantità riportata dalla stampa non dimostra da sola la provenienza o l'uso dei fondi; analogamente, la qualificazione politica dell'episodio non sostituisce le prove. Il caso mostra come infrastrutture finanziarie, confini e procedure di controllo possano diventare strumenti di pressione diplomatica."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Reuters: Hungary's $82 million bank transit swoop deepens spat with Ukraine",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNYk9KaEtHVWhDQm9FNTh0NnBGbTlId2daejZzbTlwNWVoTHB4WEcwUjB0ZUJkdGZQQ2xTQ0ZmcDhZNzlYZmUwOGtQcE9MWDRmM2piYVZzOWtjeDdaRXltcjdkVlhfVUFfS1ZYMm5wSDVoR21mbWM3UlY3STFaSnRhTDhocXJlM0gzY0ZDMnV4RS1ubDdIMEVjbm5CTzlOc1h5dHBWdEw1TWxoVHdVTTU4eEN6dWxqdmM?oc=5"
+      }
+    ]
+  },
+  {
+    "id": "mq4c-triton-sigonella",
+    "title": "MQ-4C Triton a Sigonella: sorvegliare il mare dall'alto",
+    "description": "Il drone da pattugliamento marittimo della US Navy e il valore strategico della sorveglianza persistente nel Mediterraneo.",
+    "category": "usa",
+    "date": "2026-11-09",
+    "image": "assets/images/mq4c-triton.jpg",
+    "imageAlt": "Velivolo da sorveglianza marittima senza pilota MQ-4C Triton in volo",
+    "imageCredit": "U.S. Navy · Public domain",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:First_MQ-4C_Triton_test_flight.jpg",
+    "tags": ["sigonella", "usa", "sorveglianza", "mediterraneo"],
+    "content": [
+      {
+        "type": "text",
+        "value": "L'MQ-4C Triton è un velivolo senza pilota ad alta quota e lunga autonomia impiegato dalla US Navy per la sorveglianza marittima. La Marina statunitense descrive una capacità di volo superiore ai 50.000 piedi, oltre 24 ore di autonomia e un raggio dichiarato di 7.400 miglia nautiche. Sensori diversi permettono di raccogliere informazioni su vaste aree oceaniche e di affiancare gli aerei P-8A Poseidon."
+      },
+      {
+        "type": "text",
+        "value": "La presenza di un distaccamento a Sigonella colloca la piattaforma in una posizione utile per operare nel Mediterraneo e nei mari adiacenti. La base, in Sicilia, è un nodo logistico e operativo di lunga data per le attività statunitensi e alleate. La sorveglianza aerea persistente può contribuire alla consapevolezza marittima, ma non va confusa con un'azione di combattimento: raccolta, interpretazione e condivisione dei dati sono passaggi distinti."
+      },
+      {
+        "type": "text",
+        "value": "Questi sistemi sollevano anche interrogativi politici: quali missioni vengono svolte, chi accede ai dati e quali autorizzazioni regolano le operazioni? Le schede ufficiali illustrano prestazioni e impiego dichiarato, ma non rendono pubblici tutti i dettagli operativi. Per questo una notizia sul Triton o su Sigonella va contestualizzata senza dedurre una missione specifica dalla sola presenza del velivolo."
+      }
+    ],
+    "sources": [
+      {
+        "title": "US Navy / NAVAIR: MQ-4C Triton",
+        "url": "https://www.navair.navy.mil/product/MQ-4C"
+      }
+    ]
+  },
+  {
+    "id": "mojtaba-khamenei",
+    "title": "Mojtaba Khamenei e la successione: continuità, legittimità e potere",
+    "description": "La successione alla Guida suprema iraniana va letta attraverso le istituzioni, le reti di potere e le domande sulla legittimità.",
+    "category": "asia",
+    "date": "2026-11-09",
+    "image": "assets/images/mojtaba-khamenei.jpg",
+    "imageAlt": "Edifici e torri della città di Teheran di notte",
+    "imageCredit": "Mehrad Watson · CC BY-SA 3.0",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Towers_in_Tehran_City_at_night.jpg",
+    "tags": ["iran", "mojtaba khamenei", "successione", "potere"],
+    "content": [
+      {
+        "type": "text",
+        "value": "La nomina di Mojtaba Khamenei a Guida suprema, riportata dai media internazionali nel marzo 2026, ha portato al centro dell'attenzione il meccanismo di successione della Repubblica islamica. La Costituzione affida la scelta all'Assemblea degli Esperti, organo composto da religiosi eletti. La procedura formale, però, non esaurisce l'analisi: contano anche le reti clericali, gli apparati di sicurezza e gli equilibri tra le élite."
+      },
+      {
+        "type": "text",
+        "value": "Il passaggio da padre a figlio alimenta un dibattito sulla continuità politica e sulla legittimità, perché la rivoluzione del 1979 si presentò anche come rottura con la monarchia ereditaria. Questo paragone non rende identici i due sistemi: la carica non si trasmette automaticamente per diritto dinastico e la Costituzione prevede una selezione istituzionale. Resta tuttavia politicamente significativa la percezione di una successione familiare."
+      },
+      {
+        "type": "text",
+        "value": "Le informazioni sulla figura del nuovo leader e sui suoi rapporti con gli apparati non sono tutte ugualmente verificabili. È prudente distinguere i fatti confermati dalle ricostruzioni giornalistiche e dalle interpretazioni. Per comprendere gli effetti della successione occorrerà osservare le decisioni effettive: composizione degli organi, segnali verso l'estero, politica interna e rapporti tra autorità religiose e istituzioni statali."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NPR: What to know about Mojtaba Khamenei, Iran's new supreme leader",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQaVhrSGk1a2M0Y1ljMkJMRnp1amh2MkJnSE1uT2ZfaGdBOW9tWEMta2xoQzA1N0tyTUFWZTg2dmxnRmRvSXYtUVBBcHk2NVdaOEpaa3dMMno5TzFQMVd0Rzl2UllvR0ptQ0VUZjZObzhWT0pJTUU3b3h0OFlmSHNhZVZaTHAyWHZ6?oc=5"
+      },
+      {
+        "title": "Costituzione della Repubblica islamica dell'Iran (Constitute Project)",
+        "url": "https://www.constituteproject.org/constitution/Iran_1989"
+      }
+    ]
+  },
+  {
+    "id": "iran-contesto-strategico",
+    "title": "Iran: geografia, deterrenza e profondità strategica",
+    "description": "Per leggere la postura iraniana occorre tenere insieme geografia, sicurezza del Golfo, memoria storica e limiti delle informazioni disponibili.",
+    "category": "conflitti",
+    "date": "2026-11-09",
+    "image": "assets/images/iran-golfo.jpg",
+    "imageAlt": "Veduta satellitare della regione del Golfo Persico, Iran e Iraq",
+    "imageCredit": "Earth Science and Remote Sensing Unit / NASA Johnson Space Center · Public domain",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:ISS059-E-113878_-_View_of_Iran_and_Iraq,_Shatt_al-Arab_wetlands,_Shadegan_Wildlife_Peninsula,_Abadan_Island_(cropped).jpg",
+    "tags": ["iran", "golfo persico", "deterrenza", "geopolitica"],
+    "content": [
+      {
+        "type": "text",
+        "value": "L'Iran occupa una posizione centrale tra Golfo Persico, Mar Caspio, Asia centrale e corridoi verso il Levante. La vicinanza allo Stretto di Hormuz, passaggio cruciale per il commercio energetico, rende la sicurezza marittima un elemento ricorrente nelle valutazioni strategiche. Questa geografia conta, ma non determina da sola le decisioni: capacità militari, economia, istituzioni e percezioni di minaccia concorrono a definire la politica estera."
+      },
+      {
+        "type": "text",
+        "value": "La postura di Teheran combina strumenti convenzionali e asimmetrici, relazioni con attori regionali e attenzione alla deterrenza. Le analisi esterne spesso descrivono queste scelte come un modo per compensare differenze di capacità rispetto a potenze più avanzate. Sono interpretazioni, non dichiarazioni neutrali: per valutarle bisogna confrontare dottrine ufficiali, dati verificabili e comportamenti osservabili, evitando di attribuire ogni crisi a un piano unitario."
+      },
+      {
+        "type": "text",
+        "value": "Anche il contesto interno è decisivo. La Costituzione della Repubblica islamica assegna ruoli specifici alla Guida suprema, al presidente e agli organi elettivi e religiosi; l'equilibrio effettivo dipende però da istituzioni e reti di potere che non sono sempre trasparenti. Una lettura utile mette quindi in relazione geografia, politica interna e rapporti regionali, distinguendo le informazioni pubbliche dalle ipotesi e aggiornando le conclusioni quando cambiano i fatti."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Costituzione della Repubblica islamica dell'Iran (Constitute Project)",
+        "url": "https://www.constituteproject.org/constitution/Iran_1989"
+      },
+      {
+        "title": "US Energy Information Administration: Iran",
+        "url": "https://www.eia.gov/international/analysis/country/IRN"
+      }
+    ]
   }
 ]

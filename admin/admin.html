@@ -1,17 +1,108 @@
-<h1>Admin GeoBlog</h1>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redazione - DIPLOMACY.GEO</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-page">
+  <header>
+    <a class="header-title" href="../index.html">DIPLOMACY.GEO</a>
+    <a class="admin-back" href="../index.html">Torna al magazine</a>
+  </header>
 
-<select id="section">
-  <option value="europa">Europa</option>
-  <option value="asia">Asia</option>
-  <option value="usa">USA</option>
-  <option value="conflitti">Conflitti</option>
-</select>
+  <main class="admin-shell">
+    <section class="admin-heading">
+      <p class="eyebrow">Area redazione</p>
+      <h1>Gestisci gli articoli</h1>
+      <p>Prepara il catalogo qui, poi esportalo per aggiornare il sito.</p>
+    </section>
 
-<input id="title" placeholder="Titolo">
-<br>
-<textarea id="desc" placeholder="Descrizione"></textarea>
-<br>
+    <aside class="admin-notice">
+      Questo pannello salva le bozze solo in questo browser. Per pubblicarle,
+      scarica il catalogo e sostituisci <code>data/articles.json</code> nel progetto.
+    </aside>
 
-<button onclick="addArticle()">Aggiungi articolo</button>
+    <div id="status" class="admin-status" role="status" aria-live="polite"></div>
 
-<script src="admin.js"></script>
+    <section class="admin-toolbar" aria-label="Importa o esporta il catalogo">
+      <input id="import-file" type="file" accept=".json,application/json">
+      <label class="admin-button admin-button-secondary" for="import-file">Importa catalogo JSON</label>
+      <button id="export-button" class="admin-button" type="button">Scarica articles.json</button>
+    </section>
+
+    <div class="admin-columns">
+      <section class="admin-panel">
+        <h2 id="form-heading">Nuovo articolo</h2>
+        <form id="article-form">
+          <label for="title">Titolo</label>
+          <input id="title" name="title" required maxlength="140" autocomplete="off">
+
+          <label for="description">Sommario</label>
+          <textarea id="description" name="description" rows="3" required maxlength="400"></textarea>
+
+          <div class="admin-form-row">
+            <div>
+              <label for="category">Categoria</label>
+              <select id="category" name="category" required>
+                <option value="europa">Europa</option>
+                <option value="asia">Asia</option>
+                <option value="usa">USA</option>
+                <option value="conflitti">Conflitti</option>
+              </select>
+            </div>
+            <div>
+              <label for="date">Data</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+          </div>
+
+          <label for="image">Percorso immagine</label>
+          <input id="image" name="image" placeholder="assets/images/nome-file.jpg" required>
+          <p class="admin-help">Aggiungi prima l’immagine in <code>assets/images/</code>, poi inserisci il percorso.</p>
+
+          <label for="image-alt">Descrizione dell'immagine</label>
+          <input id="image-alt" name="imageAlt" maxlength="200" placeholder="Descrivi cosa mostra la foto">
+
+          <label for="image-credit">Credito fotografico e licenza</label>
+          <input id="image-credit" name="imageCredit" maxlength="200" placeholder="Autore · CC BY 4.0">
+
+          <label for="image-credit-url">Pagina della foto / licenza</label>
+          <input id="image-credit-url" name="imageCreditUrl" type="url" placeholder="https://commons.wikimedia.org/wiki/File:...">
+
+          <label for="tags">Parole chiave</label>
+          <input id="tags" name="tags" placeholder="es. NATO, Europa, sicurezza">
+
+          <label for="instagram-url">Link al post Instagram (facoltativo)</label>
+          <input id="instagram-url" name="instagramUrl" type="url" placeholder="https://www.instagram.com/p/.../">
+
+          <label for="sources">Fonti (una per riga: titolo | URL)</label>
+          <textarea id="sources" name="sources" rows="4" placeholder="NATO - Trattato del Nord Atlantico | https://www.nato.int/..."></textarea>
+
+          <label for="body">Testo dell’articolo</label>
+          <textarea id="body" name="body" rows="9" placeholder="Scrivi o incolla il testo. Lascia una riga vuota tra i paragrafi."></textarea>
+
+          <div class="admin-form-actions">
+            <button id="save-button" class="admin-button" type="submit">Aggiungi al catalogo</button>
+            <button id="cancel-edit" class="admin-button admin-button-secondary" type="button" hidden>Annulla modifica</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-panel admin-list-panel">
+        <div class="admin-list-heading">
+          <div>
+            <h2>Catalogo</h2>
+            <p id="article-count" class="admin-help"></p>
+          </div>
+        </div>
+        <div id="article-list" class="admin-article-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
